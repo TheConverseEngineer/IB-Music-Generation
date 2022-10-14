@@ -1,4 +1,3 @@
-from typing import List, Dict
 import pyfiglet
 from random import choices
 import time
@@ -10,7 +9,7 @@ BITS_PER_NOTE = 4
 NOTES = ['C# 3.0', 'D# 3.0', 'F 3.0', 'F# 3.0', 'G# 3.0', 'A# 4.0', 'B 4.0', 'C# 4.0', 'D# 4.0', 'F 4.0', 'F# 4.0', 'G# 4.0', 'A# 5.0', 'B 5.0', 'C# 5.0']
 
 
-def generate_genome(length: int) -> List[int]:
+def generate_genome(length: int) -> list[int]:
     """
     Create a genome! (just a random choices call)
     :param length: the length of the genome
@@ -19,7 +18,7 @@ def generate_genome(length: int) -> List[int]:
     return choices([0, 1], k=length)
 
 
-def int_from_bits(bits: List[int]) -> int:
+def int_from_bits(bits: list[int]) -> int:
     """
     Does exactly what it says
     :param bits: the bits
@@ -28,7 +27,7 @@ def int_from_bits(bits: List[int]) -> int:
     return int(sum([bit*pow(2, index) for index, bit in enumerate(bits)]))
 
 
-def genome_to_melody(genome: List[int], num_bars: int, num_notes: int, num_steps: int) -> Dict[str, list]:
+def genome_to_melody(genome: list[int], num_bars: int, num_notes: int, num_steps: int) -> dict[str, list]:
     """
     Converts a genome to melody
     :param genome:  the genome
@@ -66,7 +65,7 @@ def genome_to_melody(genome: List[int], num_bars: int, num_notes: int, num_steps
     return melody
 
 
-def display_genome(genome: List[int], num_bars: int, num_notes: int, num_steps: int):
+def display_genome(genome: list[int], num_bars: int, num_notes: int, num_steps: int):
     """
     Creates and displays a genome
     :param genome:  the genome
